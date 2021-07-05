@@ -1,16 +1,12 @@
 //users
-const topicDetails = [
+const fooDetails = [
     'id', 'topic', 'createdAt'
 ],
 
-subscriberDetails = [
+barDetails = [
     'id', 'url', 'topicId'
 ];
 
-messageDetails = [
-    'id', 'topicId', 'data'
-];
-
 module.exports = {
-    topicDetails, subscriberDetails, messageDetails
+    fooDetails, barDetails
 };
