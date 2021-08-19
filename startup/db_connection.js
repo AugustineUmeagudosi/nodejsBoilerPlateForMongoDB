@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const config = require('./config');
 
-mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('Could not connect to MongoDB.', err));
+const { db: { host, port, name: dbname } } = config;
+
+mongoose.connect(`mongodb://${host}:${port}/${dbname}`, { 
+    useUnifiedTopology: true, 
+    useNewUrlParser: true, 
+    useCreateIndex: true, 
+    useFindAndModify: false 
+})
+.then(() => console.log(`Connected to mongo ${process.env.NODE_ENV} server`))
+.catch(err => console.error('Could not connect to MongoDB.', err));
