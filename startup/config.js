@@ -14,7 +14,7 @@ const config = {
 
     development: {
         app: {
-            port: parseInt(process.env.PORT) || 3001
+            port: parseInt(process.env.PORT) || 5000
         },
         db: {
             host: process.env.DEV_DB_HOST || 'localhost',

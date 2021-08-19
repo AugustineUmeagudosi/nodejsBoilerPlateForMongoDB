@@ -3,7 +3,7 @@ const config = require('./config');
 
 const { db: { host, port, name: dbname } } = config;
 
-mongoose.connect(`mongodb://${host}:${port}/${dbname}`, { 
+mongoose.connect( `mongodb://${host}:${port}/${dbname}`, { 
     useUnifiedTopology: true, 
     useNewUrlParser: true, 
     useCreateIndex: true, 
